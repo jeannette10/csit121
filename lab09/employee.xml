@@ -74,19 +74,19 @@
     </employee>
   <employee id="138">
         <firstname>John</firstname>
-        <lastname>Smith</lastname>
+        <lastname>Deo</lastname>
         <title>Engineer</title>
         <division>Materials</division>
         <building>102</building>
-        <room>55</room>
+        <room>102</room>
     </employee>
     <employee id="139">
         <firstname>Jade</firstname>
-        <lastname>Deo</lastname>
+        <lastname>Smith</lastname>
         <title>Accountant</title>
         <division>Accts Payable</division>
         <building>109</building>
-        <room>52</room>
+        <room>101</room>
     </employee>
     <employee id="140">
         <firstname>Robert</firstname>
