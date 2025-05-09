@@ -1,0 +1,115 @@
+style.css
+/* Apply consistent typography */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(125, 105, 105);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: rgba(131, 232, 129, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 15px 20px;
+}
+
+/* List styling for sources page */
+ul {
+    list-style-type: square;
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Code block styling */
+pre {
+    background: rgba(94, 157, 199, 0.605);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: monospace;
+    color: #ffcc00;
+}
+
+/* Section styling */
+section {
+    padding: 20px;
+    background: rgba(240, 152, 227, 0.6);
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        text-align: center;
+    }
+    
+    p, h1, h2 {
+        padding: 0 10px;
+    }
+}
+
+
+
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #000000;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    color:Tomato;
+    background-color: rgb(10, 9, 9);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }

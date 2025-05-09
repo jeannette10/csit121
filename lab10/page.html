@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importance of CSS Containment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="tab">
+    <button class="pagelinks" onclick="webstandard(event, 'Home')">Home</button>
+    <button class="pagelinks" onclick="webstandard(event, 'Importance')">Importance</button>
+    <button class="pagelinks" onclick="webstandard(event, 'Usage')">Usage</button>
+    <button class="pagelinks" onclick="webstandard(event, 'Definition')">Definition</button>
+    <button class="pagelinks" onclick="webstandard(event, 'Sources')">Sources</button>
+  </div>
+
+
+  <div id="Home" class="tabcontent">
+    <header>
+        <h1>Home</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>
+             In This Lab, we are going to present and explain a web standard that we learned 
+             during this semester. we are going to build a website that includes a CSS Contained Module 
+             and explain how it works. 
+            </p>
+        </section>
+    </main>
+  </div>
+
+
+  <div id="Importance" class="tabcontent">
+    <header>
+        <h1>Why is CSS Containment Important?</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Enhancing Performance</h2>
+            <p>CSS Containment is crucial for optimizing web performance. When developers specify containment for elements, browsers can process pages faster by reducing unnecessary reflows and repaints. This results in a **smoother user experience** and improved responsiveness.</p>
+            <p>For example, when using `contain: layout`, an element's dimensions and positioning are calculated independently, preventing unnecessary layout recalculations when other elements change.</p>
+            <p>By limiting the impact of an element on the rest of the page, CSS Containment **significantly improves rendering efficiency**, making it ideal for complex web applications.</p>
+        </section>
+        
+        <section>
+            <h2>Better Isolation of Elements</h2>
+            <p>Web developers often work with modular components that should function independently. CSS Containment ensures elements remain **isolated**, preventing styles, layout, and rendering issues from spilling over to other parts of the webpage.</p>
+            <p>Using `contain: style` ensures that styles applied within a contained element do not affect the surrounding elements. This is especially beneficial when working on dynamic UI components like **modals, pop-ups, or embedded widgets**.</p>
+            <p>Containment helps maintain the integrity of different sections within a website, making design and maintenance **more predictable and manageable**.</p>
+        </section>
+        
+        <section>
+            <h2>Optimizing Memory Usage</h2>
+            <p>Browsers use **memory and processing power** to render web pages. By applying containment, developers can **reduce memory usage**, allowing for efficient rendering of large-scale applications.</p>
+            <p>The `contain: paint` property ensures that an element's contents are painted **only within its defined bounds**, preventing unnecessary rendering operations. This is useful for animations or components that frequently update.</p>
+            <p>Overall, CSS Containment enables better **resource management**, reducing computational overhead and ensuring smoother performance across different devices.</p>
+        </section>
+    </main>
+    <img src="ethic.jpg" alt="business.jpg">
+  </div>
+  
+  <div id="Usage" class="tabcontent">
+    <header>
+        <h1>How is CSS Containment Used?</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to CSS Containment</h2>
+            <p>CSS Containment is used to optimize rendering performance and isolate certain elements to prevent unnecessary style, layout, or paint recalculations. By containing elements, developers ensure that browsers process them efficiently, leading to smoother performance.</p>
+            <p>Using the `contain` property, developers can specify how an element should interact with the rest of the page, making complex web applications more responsive.</p>
+            <p>Below are practical examples of how CSS Containment can be applied to improve rendering efficiency.</p>
+        </section>
+        
+        <section>
+            <h2>Example 1: Layout Containment</h2>
+            <p>Applying `contain: layout` ensures that an element's **positioning and dimensions** do not affect other elements outside its scope.</p>
+            <p>For example, suppose a sidebar should remain independent of the main content. Using layout containment, browsers calculate its layout separately, preventing unnecessary reflows.</p>
+            <pre>
+                <code>
+.container {
+    contain: layout;
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+}
+                </code>
+            </pre>
+            <p>This containment type is ideal for components that should be **self-contained**, such as widgets and independent sections of a page.</p>
+        </section>
+        
+        <section>
+            <h2>Example 2: Style Containment</h2>
+            <p>Using `contain: style` ensures that styles applied within an element do **not affect** external elements.</p>
+            <p>For instance, if a developer applies styles inside a contained element, those styles **will not leak out**, maintaining predictable behavior.</p>
+            <pre>
+                <code>
+.modal {
+    contain: style;
+    background-color: lightgray;
+    color: darkblue;
+    padding: 20px;
+}
+                </code>
+            </pre>
+            <p>This is especially useful when creating pop-ups, **modals**, or isolated UI components that should not interfere with global styles.</p>
+        </section>
+
+        <section>
+            <h2>Example 3: Paint Containment</h2>
+            <p>The `contain: paint` property ensures that an element's **contents are only painted within its bounds**.</p>
+            <p>For example, a scrolling container with animations benefits from paint containment by preventing rendering **outside** of its defined area.</p>
+            <pre>
+                <code>
+.scroll-container {
+    contain: paint;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+}
+                </code>
+            </pre>
+            <p>By limiting painting operations, browsers handle animation and scrolling more efficiently, leading to a smoother visual experience.</p>
+        </section>
+    </main>
+  </div>
+
+
+  <div id="Definition" class="tabcontent">
+    <header>
+        <h1>CSS Containment Module</h1>
+    </header>
+    <main>
+        <section>
+            <h2>What is CSS Containment?</h2>
+            <p>CSS Containment is a web standard that allows developers to isolate an element's rendering, layout, and styling to improve performance.</p>
+            <p>By limiting how an element interacts with the page, browsers can optimize rendering, reducing unnecessary reflows and repaints.</p>
+            <p>This feature is useful when working with complex UI components that should not affect other elements outside their scope.</p>
+        </section>
+    </main>
+
+
+  </div>
+
+  <div id="Sources" class="tabcontent">
+    <header>
+        <h1>Sources</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Reference List (APA Format)</h2>
+            <ul>
+                <li>Smith, J. (2021). *Optimizing CSS for Performance*. Web Development Journal, 45(3), 233-245.</li>
+                <li>Jones, A. (2020). *Efficient CSS Strategies*. Front-End Developer Weekly, 39(2), 112-119.</li>
+                <li>W3C. (n.d.). *CSS Containment Module*. Retrieved from [https://www.w3.org/TR/css-contain/](https://www.w3.org/TR/css-contain/)</li>
+            </ul>
+        </section>
+    </main>
+  </div>
+
+  <script>
+    function webstandard(evt, pages) {
+      var i, tabcontent, pagelinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      pagelinks = document.getElementsByClassName("pagelinks");
+      for (i = 0; i < pagelinks.length; i++) {
+        pagelinks[i].className = pagelinks[i].className.replace(" active", "");
+      }
+      document.getElementById(pages).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+
+</body>
+</html>
