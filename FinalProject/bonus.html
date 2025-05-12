@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        button {
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+            width: 90%; /* Responsive button */
+            max-width: 300px; /* Limits the size */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 90%;
+            max-width: 800px; /* Ensures readability */
+            border-collapse: collapse;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 600px) {
+            table {
+                font-size: 14px; /* Adjust text size */
+            }
+            button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggleButton">Get Employee Data</button>
+
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Room</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>138</td>
+                <td>John Doe</td>
+                <td>Room102</td>
+            </tr>
+            <tr>
+                <td>139</td>
+                <td>Jane Smith</td>
+                <td>Room101</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById("toggleButton").addEventListener("click", function () {
+            var table = document.getElementById("employeeTable");
+            var button = document.getElementById("toggleButton");
+
+            if (table.style.opacity === "0") {
+                table.style.opacity = "1";
+                table.style.display = "table";
+                button.textContent = "Close Employee Data";
+            } else {
+                table.style.opacity = "0";
+                setTimeout(() => { table.style.display = "none"; }, 500);
+                button.textContent = "Get Employee Data";
+            }
+        });
+    </script>
+
+</body>
+</html>
+

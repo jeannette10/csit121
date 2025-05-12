@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using CSS Containment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>How is CSS Containment Used?</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to CSS Containment</h2>
+            <p>CSS Containment is used to optimize rendering performance and isolate certain elements to prevent unnecessary style, layout, or paint recalculations. By containing elements, developers ensure that browsers process them efficiently, leading to smoother performance.</p>
+            <p>Using the `contain` property, developers can specify how an element should interact with the rest of the page, making complex web applications more responsive.</p>
+            <p>Below are practical examples of how CSS Containment can be applied to improve rendering efficiency.</p>
+        </section>
+        
+        <section>
+            <h2>Example 1: Layout Containment</h2>
+            <p>Applying `contain: layout` ensures that an element's **positioning and dimensions** do not affect other elements outside its scope.</p>
+            <p>For example, suppose a sidebar should remain independent of the main content. Using layout containment, browsers calculate its layout separately, preventing unnecessary reflows.</p>
+            <pre>
+                <code>
+.container {
+    contain: layout;
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+}
+                </code>
+            </pre>
+            <p>This containment type is ideal for components that should be **self-contained**, such as widgets and independent sections of a page.</p>
+        </section>
+        
+        <section>
+            <h2>Example 2: Style Containment</h2>
+            <p>Using `contain: style` ensures that styles applied within an element do **not affect** external elements.</p>
+            <p>For instance, if a developer applies styles inside a contained element, those styles **will not leak out**, maintaining predictable behavior.</p>
+            <pre>
+                <code>
+.modal {
+    contain: style;
+    background-color: lightgray;
+    color: darkblue;
+    padding: 20px;
+}
+                </code>
+            </pre>
+            <p>This is especially useful when creating pop-ups, **modals**, or isolated UI components that should not interfere with global styles.</p>
+        </section>
+
+        <section>
+            <h2>Example 3: Paint Containment</h2>
+            <p>The `contain: paint` property ensures that an element's **contents are only painted within its bounds**.</p>
+            <p>For example, a scrolling container with animations benefits from paint containment by preventing rendering **outside** of its defined area.</p>
+            <pre>
+                <code>
+.scroll-container {
+    contain: paint;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+}
+                </code>
+            </pre>
+            <p>By limiting painting operations, browsers handle animation and scrolling more efficiently, leading to a smoother visual experience.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<button class="tablink" onclick="page('Home', this, 'red')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="page('Labs', this, 'green')" >Labs</button>
+<button class="tablink" onclick="page('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="page('About', this, 'orange')">About</button>
+
+<div id="Home" class="tabcontent">
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="labs.html">Projects</a></li>
+                <li><a href="aboutpage.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About This Site</h2>
+            <p>This website showcases my work throughout the semester. Feel free to explore!</p>
+
+            <h2>Lessons Learned</h2>
+            <p>Completing this website was both a challenging and rewarding experience.
+              One of the biggest hurdles I faced was ensuring a consistent design across all pages while keeping the navigation intuitive.
+              Initially, I struggled with CSS positioning and making elements responsive, but after multiple iterations and testing,
+              I found effective solutions using flexbox and media queries. Another key learning moment was troubleshooting broken links.
+              I learned the importance of relative vs. absolute paths when linking pages internally.</p>
+            <p>In fact,Testing my website on different browsers and mobile devices revealed unexpected design inconsistencies. 
+               For example, certain CSS styles appeared differently on Firefox compared to Chrome, and some elements weren’t rendering properly on Safari. Through debugging with browser developer tools, I adjusted styles and ensured a more uniform experience. Mobile testing also highlighted the necessity of touch-friendly buttons and appropriate font sizes, making me more mindful of user accessibility across devices. </p>
+            <p>This course has truly transformed how I approach web development. Before, I primarily focused on writing functional code, but now I understand the importance of structure, styling, and accessibility. Learning about responsive design, semantic HTML, and CSS techniques has deepened my understanding of how modern websites are built. Going forward, I plan to continue refining my skills, especially in JavaScript, to enhance user interactivity.</p>
+        </section>
+    </main>
+    <img src="cyber.png" alt="thanks.png" style="width:150px">
+    <p>Cyber Security</p>
+    <footer>
+        <p>&copy; 2025 Jeannette Menasu</p>
+    </footer>
+</div>
+
+<div id="Labs" class="tabcontent">
+    <main>
+        <section>
+            <h2>Project</h2>
+            <table border="1">
+    
+                <tr>
+                    <th>Lab</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>
+    
+                <tr>
+                    <td>Lab 1</td>
+                    <td>Web Publishing</td>
+                    <td><a href="lab1.html">View Lab 1</a></td>
+                </tr>
+    
+                <tr>
+                    <td>Lab 2</td>
+                    <td> HTML Basics</td>
+                    <td><a href="lab2.html">View Lab 2</a></td>
+                </tr>
+    
+                <tr>
+                    <td>Lab 3</td>
+                    <td>CSS Basics</td>
+                    <td><a href="lab3.html">View Lab 3</a></td>
+                </tr>
+    
+                <tr>
+                    <td>Lab 5</td>
+                    <td>Layout Lab</td>
+                    <td><a href="lab5.html">View Lab 5</a></td>
+                <tr>
+                
+                <tr>
+                    <td>Lab 6</td>
+                    <td>UI/UX Evaluation</td>
+                    <td><a href="lab6.html">View Lab 6</a></td>
+                 <tr>
+    
+                <tr>
+                    <td>Lab 7</td>
+                    <td>Table and Form</td>
+                    <td><a href="lab7.html">View Lab 7</a></td>
+                <tr>
+    
+                <tr>    
+                    <td>Lab 8</td>
+                    <td>Interactive Menu</td>
+                    <td><a href="lab8.html">View Lab 8</a></td>
+                 <tr>
+    
+                  <tr>  
+                    <td>Lab 9</td>
+                    <td>XML</td>
+                    <td><a href="lab9.html">View Lab 9</a></td>
+                 <tr>
+    
+                  <tr>  
+                    <td>Lab 10</td>
+                    <td>Standards Presentation</td>
+                    <td><a href="lab10.html">View Lab 10</a></td>
+                 <tr>
+                       
+            </table>
+        </section>
+    </main>
+</div>
+
+<div id="Contact" class="tabcontent">
+    <main>
+        <section>
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out via email or check my social profiles!</p>
+            <ul>
+                <li>Email: kom958214@email.ccbcmd.edu</li>
+                <li>GitHub: <a href="https://github.com/jeannette10/csit121">Github</a></li>    
+            </ul> 
+            <img src="thanks.png" alt="cyber.png" style="width:150px">
+            <p>This class was fun</p>
+        </section>
+    </main>
+    
+</div>
+
+<div id="About" class="tabcontent">
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Hi! I'm Jeannette, a web development student showcasing my work in this portfolio.</p>
+            <h3>Skills</h3>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+            </ul>
+        </section>
+    </main>
+    
+</div>
+
+<script>
+function page(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
